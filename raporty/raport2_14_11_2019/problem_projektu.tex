@@ -1,0 +1,54 @@
+\section{Problem projektu}
+\label{sec:problem_projektu} %definicja etykiety rozdzialu
+
+\subsection{Nazwa projektu} % deklaracja podrozdziału
+\label{subsec:nazwa_projektu}         % deklaracja etykiety podrozdziału
+Ratowniczy system przeszukiwania pomieszczeń.
+\subsection{Opis ogólny} 
+\label{subsec:opis_ogolny} 
+Głównym celem projektu jest opracowanie zdarzeniowego systemu ratowniczego opartego o jednostkę centralną oraz rój autonomicznych robotów poszukiwawczych. Kształt pomieszczeń będzie znany poprzez wprowadzenie do centrali planu budynku. Do celów projektowych zostanie stworzony podprogram do tworzenia planu budynku i przetwarzania go do postaci potrzebnej do obsługi programu. Roboty w roju będą posiadać niezależne oprogramowanie służące do poruszania się po wyznaczonym terenie oraz do informowania o znalezionych ludziach. Roboty będą podawać swoje położenie do centrali w celu uzyskania pozwolenie na dotarcie do danego punktu. Planowane jest uzyskanie ruchu ciągłego przez roboty.
+
+\subsection{Zastosowanie} 
+\label{subsec:zastosowanie}        
+System będzie wykorzystywany do przeszukiwania pomieszczeń, np. w czasie pożaru, by nie narażać ratowników na utratę zdrowia bądź życia.
+
+\subsection{Założenia projektowe} 
+\label{subsec:zalozenia_projektowe}
+\begin{itemize}
+    \item Stały plan;
+    \item Ruch ciągły roju;
+    \item Roboty nie znają ilości poszukiwanych osób, muszą przeszukać cały teren;
+    \item Rozmieszczenie pomieszczeń i poszukiwanych osób zostaje zadawane przed symulacją poprzez wgranie odpowiedniego planu budynku;
+    \item Pomimo wstępnie planowanej ścieżki roboty muszą unikać kolizji (możliwość zderzenia, zablokowania);
+    \item Każdy robot posiada własną jednostkę sterującą;
+    \item Opracować sposób wymijania się.
+\end{itemize}
+
+\subsection{Spodziewane wyniki pracy} 
+\label{subsec:spodziewane_wyniki_pracy}         
+Zakładane jest uzyskanie symulacji systemu pozwalającego na przeszukiwanie pomieszczeń. System poprzez symulacje pozwoli także oszacować skuteczna ilość robotów w roju podczas konkretnego zadania.
+
+\subsection{Cel projektu} 
+\label{subsec:cel_projektu}         
+Celem projektu jest uzyskanie oprogramowania symulującego system zdarzeniowy złożony z roju autonomicznych robotów i sterownika centralnego, których zadaniem jest przeszukiwanie budynków w celu odszukania poszkodowanych w sytuacjach zagrażających życiu.
+
+\subsection{Środowisko i narzędzia programistyczne} 
+\label{subsec:srodowisko_i_narzędzia_programistyczne} 
+Oprogramowanie zostanie wytworzone z wykorzystaniem następujących narzędzi:
+\begin{itemize}
+    \item Język programowania: Python 3.6.8;
+    \item Menadżer pakietów dla Python 3.6: pip;
+    \item Testy jednostkowe: pytest;
+    \item Budowa interfejsu graficznego: PyQt5;
+    \item System zarządzania kontrolą wersji: GIT;
+    \item Środowisko: PyCharm lub Visual Studio Code;
+    \item Tworzenie raportów: System składni tekstu \LaTeX{}, platforma Overleaf.com.
+\end{itemize}
+
+\subsection{Sposób upowszechnia} 
+\label{subsec:Sposob_upowszechnia}  
+Etapy realizacji projektu oraz efekt końcowy wraz z użytym oprogramowaniem 
+i dokumentacjami będą dostępne poprzez dostęp do repozytorium publicznego serwisu GitHub pod adresem:\\ https://github.com/PiotrGog/SystemyZdarzeniowe.
+\subsection{Sposób prezentacji wyników projektu} 
+\label{subsec:sposob_prezentacji_wyników_projektu}        
+Projekt będzie zaprezentowany poprzez prezentacje symulacji komputerowej dla różnych przypadków.

@@ -1,0 +1,52 @@
+\section{Szczegółowy opis działania elementów systemu}
+\subsection{Działanie sterownika nadrzędnego}
+
+\subsubsection*{Planowanie trasy}
+\begin{enumerate}
+    \item Pobierz aktualny stan mapy oraz poprzednio utworzoną listę kroków trasy każdego z robotów,
+    \item Zaplanuj nowe ścieżki robotów,
+    \item Uaktualnij listę kroków ścieżek robotów,
+    \item Roześlij nowe ścieżki odpowiednio każdemu robotowi.
+\end{enumerate}
+
+\subsubsection*{Uaktualnienie współrzędnych robota}
+\begin{enumerate}
+    \item Odebranie komunikatu od robota $i$-tego o zakończeniu ruchu,
+    \item Oznacz współrzędne $[wsp_i1$, $wsp_i2$, $wsp_i3]$ jako obecną lokalizację robota,
+    \item Pobierz bieżące współrzędne do sterownika,
+    \item Prześlij nowe polecenie do robota.
+\end{enumerate}
+
+
+\subsubsection*{Zapisanie lokalizacji poszkodowanego}
+\begin{enumerate}
+    \item Pobierz aktualne współrzędne $[wsp_i1$, $wsp_i2$, $wsp_i3]$ robota $i$-tego,
+    \item Oznacz współrzędne $[wsp_i1$, $wsp_i2$, $wsp_i3]$ jako lokalizację poszkodowanego,
+    \item Oznacz poprzednie współrzędne $i$-tego robota jako lokalizacje wolną,
+    \item Oznacz poprzednie współrzędne $i$-tego robota jako lokalizacje już zbadaną,
+    \item Sprawdź czy kolejne docelowe współrzędne robota są wolne,
+    \item Jeżeli kolejne pole jest wolne, prześlij komunikat do robota z pozwoleniem na ruch,
+    \item Zarezerwuj kolejne wolne pole do najbliższego ruchu robota. %masz na mysli rezerwacje jak przecodzimy z x do x+1 to zeby zajac jeszcze x+2? Nie, sprawdził cy jest wolne, ale z perspektywy reszty systemu nie zarezerwował jeszcze tego dla tego robta, albo źle zrozumiałem piotrka z mesengera
+    %a to spoko, zle zrozumialem. chodzi mi o to co napisales, zeby system calosciowo wiedzial ze dwa pola sa zajete Czyli będzie to wszystko?
+    %zdaje mi sie ze tak ;) Super, dzięki, ze jeszcze usiadłeś. n.ie  ma Isp raww ysumie dobrze, że krzychu wolno to wysyłał :D krzychu, jesli to czytasz, DZIEKUJEMY!
+
+
+\end{enumerate}
+
+\subsubsection*{Zapisanie lokalizacji przeszkody}
+\begin{enumerate}
+    \item Pobierz aktualne współrzędne $[wsp_i1$, $wsp_i2$, $wsp_i3]$ robota $i$-tego,
+    \item Oznacz współrzędne $[wsp_i1$, $wsp_i2$, $wsp_i3]$ jako lokalizację przeszkody,
+    \item Prześlij komunikat o udanej komunikacji do sterownika podrzędnego,
+    \item Wyznacz nowe ścieżki dla wszystkich robotów,
+    \item Jeżeli kolejne pole nowej ścieżki jest wolne, prześlij komunikat do robota z pozwoleniem na ruch,
+    \item Przejdź do oczekiwania.
+\end{enumerate}
+
+\subsection{Działanie sterownika podrzędnego robota}
+\subsubsection*{Zgoda na ruch}
+\begin{enumerate}
+    \item Wyślij komunikat o dotarciu na kolejną pozycję,
+    \item Oczekuj na instrukcję ruchu,
+    \item Wykonaj otrzymane polecenia.
+\end{enumerate}
